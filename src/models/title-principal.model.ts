@@ -48,7 +48,6 @@ export class TitlePrincipal extends Entity {
     mysql: {columnName: 'characters', dataType: 'text', dataLength: 65535, dataPrecision: null, dataScale: null, nullable: 'Y'},
   })
   characters?: string;
-
   // Define well-known properties here
 
   // Indexer property to allow additional data

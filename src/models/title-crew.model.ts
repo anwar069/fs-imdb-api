@@ -24,7 +24,6 @@ export class TitleCrew extends Entity {
     mysql: {columnName: 'writers', dataType: 'text', dataLength: 65535, dataPrecision: null, dataScale: null, nullable: 'Y'},
   })
   writers?: string;
-
   // Define well-known properties here
 
   // Indexer property to allow additional data

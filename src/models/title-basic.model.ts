@@ -1,4 +1,7 @@
-import {Entity, model, property} from '@loopback/repository';
+import {Entity, hasMany, hasOne, model, property} from '@loopback/repository';
+import {TitleCrew} from './title-crew.model';
+import {TitlePrincipal} from './title-principal.model';
+import {TitleRating} from './title-rating.model';
 
 @model({
   settings: {idInjection: false, mysql: {schema: 'fsimdb', table: 'title_basic'}}
@@ -88,6 +91,17 @@ export class TitleBasic extends Entity {
   })
   addedByUser?: number;
 
+  @hasOne(() => TitleRating,
+    {keyFrom: 'tconst', keyTo: 'tconst'})
+  ratings: TitleRating;
+
+  @hasMany(() => TitlePrincipal,
+    {keyFrom: 'tconst', keyTo: 'tconst'})
+  principals: TitlePrincipal[];
+
+  @hasMany(() => TitleCrew,
+    {keyFrom: 'tconst', keyTo: 'tconst'})
+  crews: TitleCrew[];
   // Define well-known properties here
 
   // Indexer property to allow additional data
